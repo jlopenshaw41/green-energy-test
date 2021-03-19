@@ -2,9 +2,9 @@ require('dotenv-safe').config();
 
 const cfg = {};
 
-cfg.port = process.env.PORT || 3000;
+// cfg.port = process.env.PORT || 3000;
 
-cfg.secret = process.env.APP_SECRET || 'keyboard cat';
+// cfg.secret = process.env.APP_SECRET || 'keyboard cat';
 
 cfg.accountSid = process.env.TWILIO_ACCOUNT_SID;
 
