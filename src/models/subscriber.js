@@ -1,6 +1,8 @@
 module.exports = (connection, DataTypes) => {
-    const schema = {
+  const schema = {
+      email: DataTypes.STRING,
       phone: DataTypes.STRING,
+      password: DataTypes.STRING,
       subscribed: DataTypes.BOOLEAN,
     };
   

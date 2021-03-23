@@ -1,6 +1,7 @@
 const { Subscriber } = require("../models");
 
 const create = (req, res) => {
+  console.log(req.body);
   Subscriber.create(req.body).then((subscriber) =>
     res.status(201).json(subscriber)
   );
