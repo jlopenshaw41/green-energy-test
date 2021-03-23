@@ -82,6 +82,10 @@ exports.sendMessages = (req, res) => {
     .then((subscribers) => {
       messageSender.sendMessageToSubscribers(subscribers, message);
     })
+    // I've added this to send a response and stop Postman just hanging when I send this HTTP POST request
+    .then(() => {
+      res.status(200).send("Success! Your message(s) have been sent.");
+    })
     // Don't think we need this:
     // .then(() => {
     //   req.flash("successes", "messages on their way");
@@ -89,6 +93,8 @@ exports.sendMessages = (req, res) => {
     // })
     .catch((err) => {
       console.log(`Err ${err.message}`);
+      // I've added this to send a response and stop Postman just hanging when I send this HTTP POST request
+      res.status(500).send(err.message);
     //   req.flash("errors", err.message);
       // res.redirect("/");
     });
